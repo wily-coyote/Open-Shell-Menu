@@ -2768,7 +2768,7 @@ void CCustomMenuDlg7::CItemList::SubclassWindow( HWND hWnd, CCustomMenuDlg7 *pOw
 		else
 			size.cx=0;
 		if (size.cx<50) size.cx=50;
-		
+
 		SelectObject(hdc,font0);
 		DeleteDC(hdc);
 		LVCOLUMN column={LVCF_WIDTH|LVCF_TEXT,0,size.cx,(LPWSTR)(LPCWSTR)str};
@@ -3237,7 +3237,7 @@ void CCustomMenuDlg7::CItemList::InsertItem( int index, int copy )
 	ListView_EnsureVisible(m_hWnd,index,FALSE);
 	UpdateItem(index);
 	m_pOwner->SerializeData();
-	
+
 	ListView_SetItemState(m_hWnd,index,LVIS_SELECTED|LVIS_FOCUSED,LVIS_SELECTED|LVIS_FOCUSED);
 	m_Line=index;
 	if (copy<0)
@@ -4462,6 +4462,7 @@ CSetting g_Settings[]={
 	{L"StartButtonText",CSetting::TYPE_STRING,IDS_BUTTON_TEXT,IDS_BUTTON_TEXT_TIP,L"$Menu.Start",0,L"#StartButtonType=1",L"ClasicButton"},
 
 {L"Taskbar",CSetting::TYPE_GROUP,IDS_TASKBAR_SETTINGS,0,0,CSetting::FLAG_BASIC},
+	{L"ForceClassicTaskbar",CSetting::TYPE_BOOL,IDS_TASK_FORCE_CLASSIC,IDS_TASK_FORCE_CLASSIC_TIP,0,CSetting::FLAG_CALLBACK},
 	{L"CustomTaskbar",CSetting::TYPE_BOOL,IDS_TASK_CUSTOM,IDS_TASK_CUSTOM_TIP,0,CSetting::FLAG_CALLBACK},
 	{L"TaskbarLook",CSetting::TYPE_INT,IDS_TASK_LOOK,IDS_TASK_LOOK_TIP,1,CSetting::FLAG_CALLBACK,L"CustomTaskbar",L"CustomTaskbar"},
 		{L"Opaque",CSetting::TYPE_RADIO,IDS_TASK_OPAQUE,IDS_TASK_OPAQUE_TIP},
@@ -4824,7 +4825,7 @@ void UpdateSettings( void )
 	UpdateSetting(L"UserFiles",CComVariant(bNoDocs?0:1),bNoDocs);
 	UpdateSetting(L"UserDocuments",CComVariant(bNoDocs?0:1),bNoDocs);
 	UpdateSetting(L"UserPictures",CComVariant(bNoDocs?0:1),bNoDocs);
-	
+
 	bool bNoEdit=SHRestricted(REST_NOCHANGESTARMENU)!=0;
 	UpdateSetting(L"EnableDragDrop",CComVariant(bNoEdit?0:1),bNoEdit);
 	UpdateSetting(L"EnableContextMenu",CComVariant(bNoEdit?0:1),bNoEdit);
@@ -5012,7 +5013,7 @@ void UpdateSettings( void )
 	UpdateSetting(L"MenuItems2",CComVariant(g_DefaultStartMenu2),false);
 	{
 		// make games disabled by default if the folder doesn't exist (like on a server)
-		
+
 		const wchar_t *defaultMenu, *gameSettings0, *gameSettings1, *gameSettings2;
 		if (GetWinVersion()<WIN_VER_WIN81)
 		{
@@ -5228,7 +5229,7 @@ void ClosingSettings( HWND hWnd, int flags, int command )
 
 void SettingChangedCallback( const CSetting *pSetting )
 {
-	if (wcscmp(pSetting->name,L"CustomTaskbar")==0 || wcscmp(pSetting->name,L"TaskbarLook")==0 || wcscmp(pSetting->name,L"TaskbarOpacity")==0 || wcscmp(pSetting->name,L"TaskbarColor")==0 || wcscmp(pSetting->name,L"TaskbarTextColor")==0)
+	if (wcscmp(pSetting->name,L"CustomTaskbar")==0 || wcscmp(pSetting->name,L"TaskbarLook")==0 || wcscmp(pSetting->name,L"TaskbarOpacity")==0 || wcscmp(pSetting->name,L"TaskbarColor")==0 || wcscmp(pSetting->name,L"TaskbarTextColor")==0 || wcscmp(pSetting->name,L"ForceClassicTaskbar")==0)
 	{
 		UpdateTaskBars(TASKBAR_UPDATE);
 		UpdateTaskBars(TASKBAR_UPDATE_TEXTURE);
