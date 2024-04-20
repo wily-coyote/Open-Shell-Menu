@@ -1,5 +1,5 @@
 @echo off
-set PATH=C:\Program Files\7-Zip\;C:\Program Files (x86)\HTML Help Workshop;C:\Program Files (x86)\WiX Toolset v3.14\bin\;%PATH%
+set PATH=C:\Program Files\7-Zip\;C:\Program Files (x86)\HTML Help Workshop;c:\everything\docs\tools\wix314\;%PATH%
 
 cd %~dp0
 
