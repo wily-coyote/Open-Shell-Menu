@@ -843,9 +843,11 @@
 #define IDS_STRING7109                  7109
 #define IDS_STRING7110                  7110
 #define IDS_STRING7111                  7111
+#define IDS_TASK_FORCE_CLASSIC			9000
+#define IDS_TASK_FORCE_CLASSIC_TIP		9001
 
 // Next default values for new objects
-// 
+//
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        126

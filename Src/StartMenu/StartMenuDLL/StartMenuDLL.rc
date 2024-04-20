@@ -27,17 +27,17 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE 
+1 TEXTINCLUDE
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE 
+2 TEXTINCLUDE
 BEGIN
     "#include ""afxres.h""\r\0"
 END
 
-3 TEXTINCLUDE 
+3 TEXTINCLUDE
 BEGIN
     "#include ""..\\..\\Lib\\resource.h""\r\n"
     "#include ""..\\..\\Lib\\Lib.rc""\r\0"
@@ -224,7 +224,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
     IDD_RENAME, DIALOG
     BEGIN
@@ -395,7 +395,7 @@ IDB_BUTTON180           IMAGE                   "button180.png"
 // String Table
 //
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_APP_TITLE           "Open-Shell Menu"
     IDS_SETTINGS_TITLE      "Settings for Open-Shell Menu"
@@ -404,7 +404,7 @@ BEGIN
     IDS_NO_TEXT             "<No Text>"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SKIN_ERR_UNKNOWN    "Unknown error.\r\n"
     IDS_SKIN_ERR_DISABLE    "\r\nYou can disable this popup from the settings."
@@ -422,7 +422,7 @@ BEGIN
     IDS_SKIN_ERR_LOAD_FILE1 "Failed to load the main skin file %s.\r\n"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SKIN_ERR_FIND_RES   "Can't find the variation ""SKIN"" resource with ID=%d.\r\n"
     IDS_SKIN_ERR_LOAD_RES   "Failed to load the variation ""SKIN"" resource with ID=%d.\r\n"
@@ -442,7 +442,7 @@ BEGIN
     IDS_LCLICK_TIP          "Select what happens when you click the left mouse button on the Start Button"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SHIFT_LCLICK        "Shift+Click opens:"
     IDS_SHIFT_LCLICK_TIP    "Select what happens when you hold Shift and click the left mouse button on the Start Button"
@@ -462,7 +462,7 @@ BEGIN
     IDS_WSM_HOTKEY_TIP      "Enter an additional hotkey for opening the Windows start menu"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SHOW_ITEMS          "Special Items"
     IDS_ITEM_HIDE           "Don't display this item"
@@ -482,7 +482,7 @@ BEGIN
     IDS_SHOW_USERDOCS       "User documents"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SHOW_USERDOCS_TIP   "Select how to display the user's documents in the start menu"
     IDS_SHOW_USERPICS       "User pictures"
@@ -502,7 +502,7 @@ BEGIN
     IDS_SHOW_LOGOFF         "Show Log Off"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_CUSTOM_TIP          "This is a custom menu item. Use the command property to launch a program, or the link property to add a folder to the start menu"
     IDS_SEARCH_TIP          "This is the top item for the Search menu"
@@ -522,7 +522,7 @@ BEGIN
     IDS_SEARCH_BOX_SEL      "Selected by default"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SEARCH_BOX_SEL_TIP  "When this is checked, the search box will be selected when you open the menu"
     IDS_SEARCH_PATH         "Search the system path"
@@ -540,7 +540,7 @@ BEGIN
     IDS_DELAY_ICONS         "Delay loading of icons"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SHOW_LOGOFF_TIP     "Enable the Log Off item"
     IDS_CONFIRM_LOGOFF      "Confirm Log Off"
@@ -560,7 +560,7 @@ BEGIN
     IDS_RECENT_KEYS         "Shortcuts for the recent programs"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_RECENT_KEYS_TIP     "Select the style of the keyboard shortcuts for the recent programs"
     IDS_KEY_NOTHING         "No shortcuts"
@@ -580,7 +580,7 @@ BEGIN
     IDS_TIP_DELAY_TIP       "The delay for the infotip. The first number is the delay for showing the infotip and the second is the delay for hiding it. Use '0,0' to disable the tips"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_FTIP_DELAY          "Infotip delay (for folders)"
     IDS_FTIP_DELAY_TIP      "Same as the above, but for folder items. This is disabled by default because the folder infotips are usually not very helpful"
@@ -600,12 +600,12 @@ BEGIN
     IDS_SUB_ANIM_SPEED_TIP  "The duration (in ms) for the sub-menu animation"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SCROLL_SPEED        "Main menu scroll speed (1..10)"
     IDS_SCROLL_SPEED_TIP    "The speed (from 1 to 10) when scrolling the items in the main menu"
     IDS_SUB_SCROLL_SPEED    "Sub-menu scroll speed (1..10)"
-    IDS_SUB_SCROLL_SPEED_TIP 
+    IDS_SUB_SCROLL_SPEED_TIP
                             "The speed (from 1 to 10) when scrolling the items in the sub-menus"
     IDS_FADE_SPEED          "Fade speed"
     IDS_FADE_SPEED_TIP      "The duration (in ms) of the fade animation for the selected menu item"
@@ -621,7 +621,7 @@ BEGIN
     IDS_CASCADE_MENU_TIP    "When this is checked, the additional items of the right-click menu (like New Folder, or Sort by Name) are placed in a sub-menu of their own"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_CACHE_ICONS         "Pre-cache icons"
     IDS_CACHE_ICONS_TIP     "When this is checked, the system will begin pre-loading the icons as soon as you log in, so the start menu will open faster"
@@ -645,7 +645,7 @@ BEGIN
     IDS_ALT_ACCELERATORS_TIP "Keyboard accelerators will be triggered only if Alt key is pressed"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_PIC_COMMAND_TIP     "Enter the command you want to run when you click on the user picture"
     IDS_NAME_COMMAND        "User name command"
@@ -671,7 +671,7 @@ BEGIN
     IDS_SMOOTH_STD          "Standard"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SMOOTH_STD_TIP      "The text will use the the standard anti-aliasing smoothing"
     IDS_SMOOTH_CLEAR        "Clear Type"
@@ -691,7 +691,7 @@ BEGIN
     IDS_SOUND_POPUP         "Sub-menu sound"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SOUND_POPUP_TIP     "This sound plays when a sub-menu is opened"
     IDS_SOUND_COMMAND       "Command sound"
@@ -711,7 +711,7 @@ BEGIN
     IDS_SELECT_BUTTON_TIP   "The 'All Programs' item will be selected by default"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SKIN_SETTINGS       "Skin"
     IDS_ALL_SKIN_SETTINGS   "All Programs Skin"
@@ -731,7 +731,7 @@ BEGIN
     IDS_COMMAND_TIP         "Pick a command for the menu item. The command determines what the item does when clicked"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_LINK_TIP            "Type a full path of a file or a folder. If you select a file, it will be executed. If you select a folder, it will be opened as a sub-menu. You can use environment variables like %windir%\\Notepad.exe. Note: Buttons with sub-menus cannot have a link"
     IDS_TEXT_TIP            "Enter the text for the menu item. If the text starts with $ (like $Menu.Network) it will be looked up in the file StartMenuL10N.ini"
@@ -751,7 +751,7 @@ BEGIN
     IDS_MAIN_SORTONCE       "Sort the main menu only the first time"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SEPARATOR_TIP       "This item separates items in the menu"
     IDS_BREAK_TIP           "(only for two-column main menus) marks the start of the second column"
@@ -771,7 +771,7 @@ BEGIN
     IDS_HELP_TIP            "Shows the Windows help"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_LOGOFF_TIP          "Logs off the current user"
     IDS_UNDOCK_TIP          "Undocks the laptop from the docking station"
@@ -791,7 +791,7 @@ BEGIN
     IDS_SWITCH_TIP          "Exits the current session and enters the 'switch user' screen"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_DELAY_ICONS_TIP     "When this is checked, the menu will show first and the icons will continue to load after that"
     IDS_SHOW_FAVORITES_TIP2 "Select how to display Favorites in the start menu\nWarning: You don't have a Favorites item in your custom menu, so this setting will be ignored"
@@ -803,7 +803,7 @@ BEGIN
     IDS_SHOW_NETWORK_TIP2   "Select how to display Network in the start menu\nWarning: You don't have a Network Connections item in your custom menu, so this setting will be ignored"
     IDS_SHOW_PRINTERS_TIP2  "Select how to display Printers in the start menu\nWarning: You don't have a Printers item in your custom menu, so this setting will be ignored"
     IDS_SHOW_SHUTDOWN_TIP2  "Select how to display Shutdown in the start menu\nWarning: You don't have a 'Shutdown dialog' item in your custom menu, so this setting will be ignored"
-    IDS_SHOW_SEARCH_BOX_TIP2 
+    IDS_SHOW_SEARCH_BOX_TIP2
                             "Enable the search for programs\nWarning: You don't have a Search Box item in your custom menu, so this setting will be ignored"
     IDS_SHOW_SEARCH_TIP2    "Enable the Search menu\nWarning: You don't have a Search Menu item in your custom menu, so this setting will be ignored"
     IDS_SHOW_HELP_TIP2      "Enable the Help and Support item\nWarning: You don't have a Help item in your custom menu, so this setting will be ignored"
@@ -812,7 +812,7 @@ BEGIN
     IDS_SHOW_UNDOCK_TIP2    "Enable the Undock item (for laptops only)\nWarning: You don't have a Undock item in your custom menu, so this setting will be ignored"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_LOCK_TIP            "Locks the computer"
     IDS_SUB_ANIM_ALWAYS     "Always animate sub-menus"
@@ -832,7 +832,7 @@ BEGIN
     IDS_MENU_SHADOW         "Enable menu shadow"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_MENU_SHADOW_TIP     "When this is checked, the menus will have a shadow"
     IDS_START_BUTTON        "Start Button"
@@ -850,7 +850,7 @@ BEGIN
     IDS_BUTTON_IMAGE_TIP    "Select a bitmap to be used for the Start button"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_BUTTON_SIZE         "Button size"
     IDS_BUTTON_SIZE_TIP     "Select the width for the button when using a custom image"
@@ -870,7 +870,7 @@ BEGIN
     IDS_DISABLE_START       "Start screen"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_DISABLE_START_TIP   "Disable the Start screen popup at the bottom corner when the taskbar is at the bottom"
     IDS_DISABLE_ALL         "All"
@@ -889,7 +889,7 @@ BEGIN
     IDS_MAX_JUMPLISTS_TIP   "Limit the number of items in the jumplists"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_JUMPLIST_KEYS       "Keyboard shortcuts for programs with jumplists"
     IDS_JUMPLISTS_KEY_TIP   "Select the action to happen when you press the keyboard shortcut for a program with a jumplist"
@@ -909,7 +909,7 @@ BEGIN
     IDS_SHOW_COMPUTER_TIP   "Select how to display the computer in the start menu"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SHOW_COMPUTER_TIP2  "Select how to display the computer in the start menu\nWarning: You don't have a Computer item in your custom menu, so this setting will be ignored"
     IDS_OPEN_DESKTOP        "Start Menu in Desktop and shows Desktop in Metro"
@@ -927,7 +927,7 @@ BEGIN
     IDS_SEARCH_KEYWORDS     "Search for keywords"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SEARCH_KEYWORDS_TIP "When this is checked, the search will look at the keywords associated with the settings"
     IDS_SEARCH_FILES        "Search files"
@@ -936,10 +936,10 @@ BEGIN
     IDS_SEARCH_CONTENTS     "Search contents"
     IDS_SEARCH_CONTENTS_TIP "When this is checked, the search will look at the file contents and metadata"
     IDS_SEARCH_CATEGORIES   "Organize by library"
-    IDS_SEARCH_CATEGORIES_TIP 
+    IDS_SEARCH_CATEGORIES_TIP
                             "When this is checked, the files will be grouped by the library they are in - Documents, Music, Pictures, etc"
     IDS_SEARCH_EVERYWHERE   "Search all indexed locations"
-    IDS_SEARCH_EVERYWHERE_TIP 
+    IDS_SEARCH_EVERYWHERE_TIP
                             "When this is checked, the search for files will look in all indexed folders. Otherwise only libraries and the Desktop will be searched"
     IDS_SEARCH_INTERNET     "Search the Internet"
     IDS_SEARCH_INTERNET_TIP "When this is checked, the start menu will have an option to search the Internet"
@@ -949,7 +949,7 @@ BEGIN
     IDS_RECENT_PROGRAMS_TIP "Enable the display of used programs in the start menu"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SHOW_RECENT         "Recent programs"
     IDS_SHOW_RECENT_TIP     "The start menu will show the programs that were recently launched from the start menu"
@@ -963,20 +963,20 @@ BEGIN
     IDS_CP_CATEGORIES2      "Use Categories view for the Control Panel"
     IDS_CP_CATEGORIES_TIP   "When this is checked, the Control Panel will open in Categories view"
     IDS_CLASSIC_STYLE_TIP   "The Classic style has a cascading Programs menu. It gives you unlimited freedom to arrange the menu items in any configuration."
-    IDS_TWO_COLUMN_STYLE_TIP 
+    IDS_TWO_COLUMN_STYLE_TIP
                             "This style has 2 columns and fits more items. You can arrange the menu items in any configuration."
     IDS_WIN7_STYLE_TIP      "The Windows 7 style shows the Programs list and the search results inside the menu. It offers limited customizability."
     IDS_SHUTDOWN_COMMAND    "Shutdown command"
-    IDS_SHUTDOWN_COMMAND_TIP 
+    IDS_SHUTDOWN_COMMAND_TIP
                             "Select the default command for the Shutdown button in the menu"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SHUTDOWN_NONE       "None (hide the button)"
     IDS_SHUTDOWN_NONE_TIP   "The shutdown button will be removed from the menu"
     IDS_SHUTDOWN_SHUTDOWN   "Shutdown"
-    IDS_SHUTDOWN_SHUTDOWN_TIP 
+    IDS_SHUTDOWN_SHUTDOWN_TIP
                             "The shutdown button will shut down the computer"
     IDS_SHUTDOWN_RESTART    "Restart"
     IDS_SHUTDOWN_RESTART_TIP "The shutdown button will restart the computer"
@@ -985,7 +985,7 @@ BEGIN
     IDS_SHUTDOWN_SLEEP      "Sleep"
     IDS_SHUTDOWN_SLEEP_TIP  "The shutdown button will put the computer to sleep"
     IDS_SHUTDOWN_HIBERNATE  "Hibernate"
-    IDS_SHUTDOWN_HIBERNATE_TIP 
+    IDS_SHUTDOWN_HIBERNATE_TIP
                             "The shutdown button will hibernate the computer"
     IDS_SHUTDOWN_LOCK       "Lock"
     IDS_SHUTDOWN_LOCK_TIP   "The shutdown button will lock the computer"
@@ -993,10 +993,10 @@ BEGIN
     IDS_SHUTDOWN_SWITCH_TIP "The shutdown button will switch to another user"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SHUTDOWN_SHUTDOWN_BOX "Shutdown dialog"
-    IDS_SHUTDOWN_SHUTDOWN_BOX_TIP 
+    IDS_SHUTDOWN_SHUTDOWN_BOX_TIP
                             "The shutdown button will show a dialog box to select the next operation"
     IDS_UNDOCK_ITEM         "Undock"
     IDS_DISCONNECT_ITEM     "Disconnect"
@@ -1014,7 +1014,7 @@ BEGIN
     IDS_LIB_MUSIC_ITEM      "Music library"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_LIB_TV_ITEM         "Recorded TV"
     IDS_PROGRAMS_ITEM       "Programs"
@@ -1034,7 +1034,7 @@ BEGIN
     IDS_MENU_MOVE_DOWN      "Move Down"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_MENU_INSERT         "Insert New Item"
     IDS_MENU_DUPLICATE      "Duplicate Item"
@@ -1054,13 +1054,13 @@ BEGIN
     IDS_FAST_ITEMS          "Use Start Menu folder"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_FAST_ITEMS_TIP      "The pinned programs will be stored in the system Start Menu folder"
     IDS_PINNED_ITEMS        "Use Pinned folder"
     IDS_PINNED_ITEMS_TIP    "The pinned programs will be stored in a dedicated Pinned folder"
     IDS_BUTTON_ICON_SIZE    "Icon size"
-    IDS_BUTTON_ICON_SIZE_TIP 
+    IDS_BUTTON_ICON_SIZE_TIP
                             "Select the size for the button icon. Enter 0 to use the default icon size"
     IDS_BUTTON_SIZE_TIP2    "Select the width for the button when using a custom image. Enter 0 to use the actual bitmap size"
     IDS_MONITOR_OFF_TIP     "Turns off the monitor"
@@ -1075,14 +1075,14 @@ BEGIN
     IDS_MAIN_MENU_SETTINGS  "Main Menu"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_RIGHT_SHIFT         "Right click opens the Windows context menu"
     IDS_RIGHT_SHIFT_TIP     "When this is checked, right-click on the start button will open the standard Windows context menu instead of the Open-Shell menu. Otherwise Shift+right-click will open it"
     IDS_RIGHT_SHIFTX        "Right click opens Win+X menu"
     IDS_RIGHT_SHIFTX_TIP    "When this is checked, right-click on the start button will open the Win+X power menu instead of the Open-Shell menu. Otherwise Shift+right-click will open it"
     IDS_STARTSCREEN_ITEM    "Show Start screen shortcut"
-    IDS_STARTSCREEN_ITEM_TIP 
+    IDS_STARTSCREEN_ITEM_TIP
                             "When this is checked, the main menu will contain a shortcut to open the Start screen"
     IDS_MIN_HEIGHT          "Minimum menu height"
     IDS_MIN_HEIGHT_TIP      "The main menu will be at least as tall as this many search results"
@@ -1094,7 +1094,7 @@ BEGIN
     IDS_GLASS_INTENSITY_TIP "Select the intensity (brightness) for the glass color in the menu (0 - dark, 100 - bright)"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_GLASS_BLENDING      "Menu color blending"
     IDS_GLASS_BLENDING_TIP  "Select how much of the menu skin color to blend (0 - less, 100 - more)"
@@ -1114,7 +1114,7 @@ BEGIN
     IDS_MOUSE_MONITOR_TIP   "When this is checked, pressing Shift+Win will open the Start screen on the same monitor as the mouse pointer"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STRING7001          "Black buttons on glass#The buttons and frames in the second column of the main menu will be black"
     IDS_STRING7002          "Black text on glass#The text in the second column of the main menu will be black"
@@ -1125,7 +1125,7 @@ BEGIN
     IDS_STRING7007          "Large font#The sub-menus will use larger font"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STRING7008          "No icons in second column#The items in the second column of the main menu will not have icons"
     IDS_STRING7009          "Disable glass transparency#The colored parts of the menu will be opaque"
@@ -1145,7 +1145,7 @@ BEGIN
     IDS_STRING7023          "Show icon frames#The icons in the main menu will have a frame around them"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STRING7024          "Shadows on glass#The text and the arrows in the second column of the main menu will have a drop shadow"
     IDS_STRING7025          "Opaque"
@@ -1171,7 +1171,7 @@ BEGIN
     IDS_STRING7045          "Full glass#The entire main menu will use transparent glass with accent color."
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STRING7100          "This is the default skin when no other skin is selected or if the selected skin fails to load.\n\nPart of <A HREF=""https://github.com/Open-Shell/Open-Shell-Menu/"">Open-Shell</A> (c) 2009-2017, Ivo Beltchev"
     IDS_STRING7101          "Windows Aero skin\n\nDefault skin to use for the Windows Aero theme.\n\nPart of <A HREF=""https://github.com/Open-Shell/Open-Shell-Menu/"">Open-Shell</A> (c) 2009-2017, Ivo Beltchev"
@@ -1179,7 +1179,7 @@ BEGIN
     IDS_STRING7103          "Classic skin\n\nClassic look with large or small icons.\n\nPart of <A HREF=""https://github.com/Open-Shell/Open-Shell-Menu/"">Open-Shell</A> (c) 2009-2017, Ivo Beltchev"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STRING7104          "Full Glass skin\n\nTransparent menu with large or small icons.\n\nPart of <A HREF=""https://github.com/Open-Shell/Open-Shell-Menu/"">Open-Shell</A> (c) 2009-2017, Ivo Beltchev"
     IDS_STRING7105          "Smoked Glass skin\n\nSimple transparent menu with dark background.\n\nPart of <A HREF=""https://github.com/Open-Shell/Open-Shell-Menu/"">Open-Shell</A> (c) 2009-2017, Ivo Beltchev"
@@ -1191,7 +1191,7 @@ BEGIN
     IDS_STRING7111          "Immersive skin\n\nA skin that uses immersive colors and modern visual elements in the style of Windows 10.\n\nPart of <A HREF=""https://github.com/Open-Shell/Open-Shell-Menu/"">Open-Shell</A> (c) 2023, The Open-Shell Team"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_COLUMN_ICON         "Icon"
     IDS_COLUMN_COMMAND      "Command"
@@ -1211,7 +1211,7 @@ BEGIN
     IDS_PROG_WIDTH_TIP      "Set the width of the program column in the Windows 7 style in characters."
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_JUMP_WIDTH          "Jumplist pane width"
     IDS_JUMP_WIDTH_TIP      "Set the width of the jumplist column in the Windows 7 style in characters."
@@ -1231,13 +1231,13 @@ BEGIN
     IDS_SEARCH_METROS       "Search Settings"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SEARCH_METROS_TIP   "When this is checked, the search results will include the modern Settings window"
     IDS_SHOW_APPS_MENU      "Show Apps menu"
     IDS_SHOW_APPS_MENU_TIP  "Enable the Apps menu"
     IDS_SHOW_APPS_MENU_TIP2 "Enable the Apps menu\nWarning: You don't have the Apps item in your custom menu, so this setting will be ignored"
-    IDS_SKIN_ERR_METRO_COLOR 
+    IDS_SKIN_ERR_METRO_COLOR
                             "The selected skin is not compatible with Windows 7.\r\n"
     IDS_BUTTON_ALIGN        "Align to edge of taskbar"
     IDS_BUTTON_ALIGN_TIP    "When this is checked, the button will be aligned to the edge the taskbar instead of the middle of the taskbar"
@@ -1250,9 +1250,11 @@ BEGIN
     IDS_TASK_LOOK           "Taskbar look"
     IDS_TASK_LOOK_TIP       "Select the look for the taskbar"
     IDS_TASK_OPAQUE         "Opaque"
+    IDS_TASK_FORCE_CLASSIC  "Force classic taskbar"
+    IDS_TASK_FORCE_CLASSIC_TIP "Force valinet's taskbar changes for Classic theme"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_TASK_OPAQUE_TIP     "The taskbar will be opaque"
     IDS_TASK_TRANS          "Transparent"
@@ -1268,12 +1270,12 @@ BEGIN
     IDS_PCSETTINGS          "Settings"
     IDS_PCSETTINGS_TIP      "Shows the modern Settings window"
     IDS_HIGHLIGHT_NEWAPPS   "Highlight newly installed apps"
-    IDS_HIGHLIGHT_NEWAPPS_TIP 
+    IDS_HIGHLIGHT_NEWAPPS_TIP
                             "When this is checked, the start menu will highlight the apps that were recently installed"
     IDS_OPEN_CORTANA        "Cortana"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_OPEN_CORTANA_TIP    "The action will open the Cortana search interface"
     IDS_SKIN_ERR_RECBITMAP  "Skin element %s must be a bitmap.\r\n"
@@ -1293,7 +1295,7 @@ BEGIN
     IDS_TASK_STRETCHV_TIP   "Choose how to stretch the texture vertically"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_TASK_STRETCH        "Stretch"
     IDS_TASK_STRETCH_TIP    "The texture will be stretched to fit the size"
@@ -1309,7 +1311,7 @@ BEGIN
     IDS_CLEAR_CACHE         "Clear cached information"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_NO_DBLCLICK         "Single-click to open folder shortcuts"
     IDS_NO_DBLCLICK_TIP     "When this is checked, single-clicking shortcuts (links) to folders will open them in explorer. Hovering over the shortcut will still expand sub-menus"
@@ -1329,7 +1331,7 @@ BEGIN
     IDS_ITEM_LINKS_TIP      "This item will appear as a sub-menu showing only its top-level contents"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_OPEN_TRUE_PATH      "Open pinned folders to their true path"
     IDS_OPEN_TRUE_PATH_TIP  "When this is checked, pinned folders will open to their true path instead of the path to their shortcut in the Pinned Programs folder"
