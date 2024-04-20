@@ -7,16 +7,16 @@ echo -- Compiling
 for /f "usebackq tokens=*" %%i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -products * -requires Microsoft.Component.MSBuild -property installationPath`) do set MSBuildDir=%%i\MSBuild\Current\Bin\
 
 REM Restore NuGet packages
-"%MSBuildDir%MSBuild.exe" ..\OpenShell.sln /m /t:Restore -p:RestorePackagesConfig=true /verbosity:quiet /nologo
+"%MSBuildDir%MSBuild.exe" ..\OpenShell.sln /m /t:Restore -p:RestorePackagesConfig=true /verbosity:normal /nologo
 
 REM ********* Build 64-bit solution
 echo --- 64bit
-"%MSBuildDir%MSBuild.exe" ..\OpenShell.sln /m /t:Rebuild /p:Configuration="Setup" /p:Platform="x64" /verbosity:quiet /nologo
+"%MSBuildDir%MSBuild.exe" ..\OpenShell.sln /m /t:Rebuild /p:Configuration="Setup" /p:Platform="x64" /verbosity:normal /nologo
 @if ERRORLEVEL 1 exit /b 1
 
 REM ********* Build 32-bit solution (must be after 64-bit)
 echo --- 32bit
-"%MSBuildDir%MSBuild.exe" ..\OpenShell.sln /m /t:Rebuild /p:Configuration="Setup" /p:Platform="Win32" /verbosity:quiet /nologo
+"%MSBuildDir%MSBuild.exe" ..\OpenShell.sln /m /t:Rebuild /p:Configuration="Setup" /p:Platform="Win32" /verbosity:normal /nologo
 @if ERRORLEVEL 1 exit /b 1
 
 
