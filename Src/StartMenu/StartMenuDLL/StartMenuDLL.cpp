@@ -495,8 +495,8 @@ public:
 		return E_NOINTERFACE;
 	}
 
-	virtual ULONG STDMETHODCALLTYPE AddRef( void ) 
-	{ 
+	virtual ULONG STDMETHODCALLTYPE AddRef( void )
+	{
 		return InterlockedIncrement(&m_RefCount);
 	}
 
@@ -1844,6 +1844,7 @@ static LRESULT CALLBACK SubclassTaskBarProc( HWND hWnd, UINT uMsg, WPARAM wParam
 		ComputeTaskbarColors(data);
 		WINCOMPATTRDATA attrData={0x13,&data,sizeof(data)};
 		SetWindowCompositionAttribute(hWnd,&attrData);
+		UpdateTaskBars(TASKBAR_UPDATE_TEXTURE);
 		return res;
 	}
 	if ((uMsg==WM_DWMCOLORIZATIONCOLORCHANGED || uMsg==WM_SETTINGCHANGE) && taskBar && taskBar->bCustomLook && SetWindowCompositionAttribute && GetWinVersion()<WIN_VER_WIN10)
@@ -1904,7 +1905,7 @@ static LRESULT CALLBACK SubclassTaskBarProc( HWND hWnd, UINT uMsg, WPARAM wParam
 				WINCOMPATTRDATA attrData={0x13,&data,sizeof(data)};
 				SetWindowCompositionAttribute(hWnd,&attrData);
 			}
-			if (g_TaskbarTexture && IsAppThemed())
+			if (g_TaskbarTexture && (IsAppThemed() || GetSettingBool(L"ForceClassicTaskbar")))
 			{
 				// draw taskbar background (behind start button and separators)
 				PAINTSTRUCT ps;
@@ -2313,6 +2314,7 @@ void UpdateTaskBars( TUpdateTaskbar update )
 			g_TaskbarMargins.left=g_TaskbarMargins.right=g_TaskbarMargins.top=g_TaskbarMargins.bottom=0;
 			TTaskbarLook look=(TTaskbarLook)GetSettingInt(L"TaskbarLook");
 			bool bDefOpacity;
+			bool bForceClassicTaskbar = GetSettingBool(L"ForceClassicTaskbar");
 			int opacity=GetSettingInt(L"TaskbarOpacity",bDefOpacity);
 			if (look==TASKBAR_OPAQUE)
 				opacity=100, bDefOpacity=true;
@@ -2355,12 +2357,15 @@ void UpdateTaskBars( TUpdateTaskbar update )
 					}
 				}
 			}
-			else if (GetWinVersion()<WIN_VER_WIN10 && (!bDefColor || !bDefOpacity))
+			else if ((bForceClassicTaskbar == true) || (GetWinVersion()<WIN_VER_WIN10 && (!bDefColor || !bDefOpacity)))
 			{
-				if (bDefColor && GetWinVersion()>WIN_VER_WIN7)
 				{
-					color=GetSystemGlassColor8();
-					color=((color&0xFF)<<16)|(color&0xFF00)|((color>>16)&0xFF);
+					if(bForceClassicTaskbar == true){
+						color=GetSysColor(COLOR_BTNFACE);
+					} else if (bDefColor && GetWinVersion()>WIN_VER_WIN7) {
+						color=GetSystemGlassColor8();
+						color=((color&0xFF)<<16)|(color&0xFF00)|((color>>16)&0xFF);
+					}
 				}
 				BITMAPINFO bi={0};
 				bi.bmiHeader.biSize=sizeof(BITMAPINFOHEADER);
@@ -2956,11 +2961,12 @@ static void InitStartMenuDLL( void )
 			HWND toolbar=CreateWindow(TOOLBARCLASSNAME,L"",WS_CHILD|TBS_TOOLTIPS,0,0,0,0,dlg,0,0,0);
 			DestroyWindow(dlg);
 		}
-
 		if (GetWinVersion()<=WIN_VER_WIN81)
 			g_DrawThemeBackgroundHook=SetIatHook(module,"uxtheme.dll","DrawThemeBackground",DrawThemeBackground2);
 		g_DrawThemeTextHook=SetIatHook(module,"uxtheme.dll","DrawThemeText",DrawThemeText2);
-		g_DrawThemeTextExHook=SetIatHook(module,"uxtheme.dll","DrawThemeTextEx",DrawThemeTextEx2);
+		if(!GetSettingBool(L"ForceClassicTaskbar")){
+			g_DrawThemeTextExHook=SetIatHook(module,"uxtheme.dll","DrawThemeTextEx",DrawThemeTextEx2);
+		}
 		g_DrawThemeTextCtlHook=SetIatHook(GetModuleHandle(L"comctl32.dll"),"uxtheme.dll","DrawThemeText",DrawThemeText2);
 		if (GetWinVersion()>=WIN_VER_WIN10)
 			g_SetWindowCompositionAttributeHook=SetIatHook(module,"user32.dll","SetWindowCompositionAttribute",SetWindowCompositionAttribute2);
@@ -4205,7 +4211,7 @@ HBITMAP GetStartScreenIcon( int size )
 	}
 	SelectObject(hDst,bmp0);
 	DeleteDC(hDst);
-	
+
 	int i=0;
 	int n=size*rc.top;
 	for (;i<n;i++)
