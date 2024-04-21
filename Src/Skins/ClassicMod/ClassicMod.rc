@@ -52,12 +52,31 @@ END
 // Bitmap
 //
 
-1                       BITMAP                  "main_bitmap.bmp"
-2                       BITMAP                  "selection.bmp"
-3                       BITMAP                  "search.bmp"
-4                       BITMAP                  "split_selection.bmp"
-5                       BITMAP                  "new_item.bmp"
-6                       BITMAP                  "mask_bitmap.bmp"
+1                       BITMAP                  "selection.bmp"
+2                       BITMAP                  "search.bmp"
+3                       BITMAP                  "split_selection.bmp"
+4                       BITMAP                  "new_item.bmp"
+5                       BITMAP                  "memphis\\mask.bmp"
+6						BITMAP					"memphis\\chicago.bmp"
+7						BITMAP					"memphis\\memphis.bmp"
+8						BITMAP					"memphis\\2kterminal.bmp"
+9						BITMAP					"memphis\\2kserver.bmp"
+10						BITMAP					"memphis\\2kpro.bmp"
+11						BITMAP					"memphis\\2kembedded.bmp"
+12						BITMAP					"memphis\\2kdatacenterserver.bmp"
+13						BITMAP					"memphis\\2kadvancedserver.bmp"
+14						BITMAP					"memphis\\ntworkstation.bmp"
+15						BITMAP					"memphis\\ntserver.bmp"
+16						BITMAP					"memphis\\me.bmp"
+17						BITMAP					"memphis\\whistlerserver.bmp"
+18						BITMAP					"memphis\\whistlerdatacenterserver.bmp"
+19						BITMAP					"memphis\\whistleradvancedserver.bmp"
+20						BITMAP					"memphis\\xpprofessional.bmp"
+21						BITMAP					"memphis\\xphomeedition.bmp"
+22						BITMAP					"memphis\\xpembedded.bmp"
+23						BITMAP					"memphis\\terminalserver.bmp"
+24						BITMAP					"memphis\\powered.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
