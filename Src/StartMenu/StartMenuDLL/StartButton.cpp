@@ -58,6 +58,7 @@ public:
 	bool GetSmallIcons( void ) const { return m_bSmallIcons; }
 
 protected:
+	void InitializeFont( );
 	LRESULT OnCreate( UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled );
 	LRESULT OnDestroy( UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled );
 	LRESULT OnClose( UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled ) { return 0; }
@@ -120,6 +121,18 @@ CStartButton::CStartButton( void )
 	m_Theme=NULL;
 }
 
+void CStartButton::InitializeFont( )
+{
+	if (m_Font) DeleteObject(m_Font);
+	m_Font=NULL; // destroy the old font if it exists
+	NONCLIENTMETRICS ncm;
+	ncm.cbSize = sizeof(NONCLIENTMETRICS);
+	BOOL ok = SystemParametersInfo(SPI_GETNONCLIENTMETRICS, sizeof(NONCLIENTMETRICS), &ncm, 0);
+	LOGFONT captionFont = ncm.lfCaptionFont;
+	captionFont.lfWeight = FW_BOLD;
+	m_Font = CreateFontIndirect(&captionFont);
+}
+
 LRESULT CStartButton::OnCreate( UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled )
 {
 	size_t params=(intptr_t)(((CREATESTRUCT*)lParam)->lpCreateParams);
@@ -145,14 +158,7 @@ LRESULT CStartButton::OnCreate( UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& b
 	}
 	int dpi=CItemManager::GetDPI(false);
 	//m_Font=CreateFont(MulDiv(10,dpi,72),0,0,0,FW_BOLD,0,0,0,DEFAULT_CHARSET,OUT_DEFAULT_PRECIS,CLIP_DEFAULT_PRECIS,DEFAULT_QUALITY,DEFAULT_PITCH,L"Tahoma");
-
-	NONCLIENTMETRICS ncm;
-	ncm.cbSize = sizeof(NONCLIENTMETRICS);
-	BOOL ok = SystemParametersInfo(SPI_GETNONCLIENTMETRICS, sizeof(NONCLIENTMETRICS), &ncm, 0);
-	LOGFONT captionFont = ncm.lfCaptionFont;
-	captionFont.lfWeight = FW_BOLD;
-	m_Font = CreateFontIndirect(&captionFont);
-
+	InitializeFont();
 	int val=1;
 	DwmSetWindowAttribute(m_hWnd,DWMWA_EXCLUDED_FROM_PEEK,&val,sizeof(val));
 	val=DWMFLIP3D_EXCLUDEABOVE;
@@ -389,6 +395,13 @@ LRESULT CStartButton::OnThemeChanged( UINT uMsg, WPARAM wParam, LPARAM lParam, B
 	if (m_Theme) CloseThemeData(m_Theme);
 	m_Theme=NULL;
 	HIGHCONTRAST contrast={sizeof(contrast)};
+
+	TStartButtonType buttonType=GetStartButtonType();
+	m_bClassic=(buttonType==START_BUTTON_CLASSIC);
+	if(m_bClassic){
+		InitializeFont();
+	}
+
 	if (GetWinVersion()>=WIN_VER_WIN8 && SystemParametersInfo(SPI_GETHIGHCONTRAST,sizeof(contrast),&contrast,0) && (contrast.dwFlags&HCF_HIGHCONTRASTON))
 	{
 		// only use themes on Win8 with high contrast
