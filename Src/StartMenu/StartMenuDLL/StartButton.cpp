@@ -385,6 +385,12 @@ LRESULT CStartButton::OnTimer( UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bH
 
 LRESULT CStartButton::OnSettingChange( UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled )
 {
+	m_bClassic = GetStartButtonType() == START_BUTTON_CLASSIC;
+	if(m_bClassic){
+		InitializeFont();
+		LoadBitmap();
+		ResizeClient(m_Size.cx,m_Size.cy);
+	}
 	UpdateButton();
 	bHandled=FALSE;
 	return 0;
@@ -395,13 +401,6 @@ LRESULT CStartButton::OnThemeChanged( UINT uMsg, WPARAM wParam, LPARAM lParam, B
 	if (m_Theme) CloseThemeData(m_Theme);
 	m_Theme=NULL;
 	HIGHCONTRAST contrast={sizeof(contrast)};
-
-	TStartButtonType buttonType=GetStartButtonType();
-	m_bClassic=(buttonType==START_BUTTON_CLASSIC);
-	if(m_bClassic){
-		InitializeFont();
-	}
-
 	if (GetWinVersion()>=WIN_VER_WIN8 && SystemParametersInfo(SPI_GETHIGHCONTRAST,sizeof(contrast),&contrast,0) && (contrast.dwFlags&HCF_HIGHCONTRASTON))
 	{
 		// only use themes on Win8 with high contrast
@@ -530,7 +529,6 @@ void CStartButton::LoadBitmap( void )
 
 	if (m_bClassic)
 	{
-		// classic theme
 		HDC hdc=CreateCompatibleDC(NULL);
 		HFONT font0=(HFONT)SelectObject(hdc,m_Font);
 		RECT rc={0,0,0,0};
