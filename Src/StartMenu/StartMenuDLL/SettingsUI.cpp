@@ -4460,6 +4460,7 @@ CSetting g_Settings[]={
 	{L"StartButtonIcon",CSetting::TYPE_ICON,IDS_BUTTON_ICON,IDS_BUTTON_ICON_TIP,L",1",0,L"#StartButtonType=1",L"ClasicButton"},
 	{L"StartButtonIconSize",CSetting::TYPE_INT,IDS_BUTTON_ICON_SIZE,IDS_BUTTON_ICON_SIZE_TIP,0,0,L"#StartButtonType=1",L"ClasicButton"},
 	{L"StartButtonText",CSetting::TYPE_STRING,IDS_BUTTON_TEXT,IDS_BUTTON_TEXT_TIP,L"$Menu.Start",0,L"#StartButtonType=1",L"ClasicButton"},
+	{L"StartButtonNoAnim",CSetting::TYPE_BOOL,IDS_BUTTON_NO_ANIMATION,IDS_BUTTON_NO_ANIMATION_TIP,0,CSetting::FLAG_CALLBACK},
 
 {L"Taskbar",CSetting::TYPE_GROUP,IDS_TASKBAR_SETTINGS,0,0,CSetting::FLAG_BASIC},
 	{L"ForceClassicTaskbar",CSetting::TYPE_BOOL,IDS_TASK_FORCE_CLASSIC,IDS_TASK_FORCE_CLASSIC_TIP,0,CSetting::FLAG_CALLBACK},

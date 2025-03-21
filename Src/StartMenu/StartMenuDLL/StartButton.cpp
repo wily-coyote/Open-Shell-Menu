@@ -620,6 +620,13 @@ void CStartButton::LoadBitmap( void )
 		m_Blendmap=CreateDIBSection(hdc,&bi,DIB_RGB_COLORS,(void**)&m_BlendBits,NULL,0);
 		DeleteDC(hdc);
 	}
+
+	if(GetSettingBool(L"StartButtonNoAnim")){
+		m_Animations[0].bBlend = false;
+		m_Animations[1].bBlend = false;
+		m_Animations[0].duration = 0;
+		m_Animations[1].duration = 0;
+	}
 }
 
 static std::map<int,CStartButton> g_StartButtons;

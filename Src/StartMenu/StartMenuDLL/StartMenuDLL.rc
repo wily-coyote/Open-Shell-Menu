@@ -848,6 +848,8 @@ BEGIN
     IDS_CUSTOM_BUTTON_TIP   "Select a custom bitmap for the Start button"
     IDS_BUTTON_IMAGE        "Button image"
     IDS_BUTTON_IMAGE_TIP    "Select a bitmap to be used for the Start button"
+    IDS_BUTTON_NO_ANIMATION  "Disable animation"
+    IDS_BUTTON_NO_ANIMATION_TIP "Turn off the animation when hovering above the Start button"
 END
 
 STRINGTABLE

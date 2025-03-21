@@ -845,6 +845,8 @@
 #define IDS_STRING7111                  7111
 #define IDS_TASK_FORCE_CLASSIC			9000
 #define IDS_TASK_FORCE_CLASSIC_TIP		9001
+#define IDS_BUTTON_NO_ANIMATION			9002
+#define IDS_BUTTON_NO_ANIMATION_TIP		9003
 
 // Next default values for new objects
 //
